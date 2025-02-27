@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Mariana Morales</title>
+    <style>
+        body {
+            font-family: "Courier New", monospace;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 60px;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            border: 2px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .portfolio-container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 100px;
+            height: auto;
+        }
+        .category-links {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-size: 1em;
+        }
+        .category-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #671817;
+        }
+        .moving-word {
+            display: inline-block;
+            position: relative;
+            color: #671817;
+            animation: gentleWave 6s infinite alternate ease-in-out;
+        }
+        .moving-word:nth-child(odd) {
+            animation-duration: 7s;
+        }
+        .moving-word:nth-child(even) {
+            animation-duration: 5s;
+        }
+        @keyframes gentleWave {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(2px, -1px); }
+            50% { transform: translate(-2px, 2px); }
+            75% { transform: translate(1px, -2px); }
+            100% { transform: translate(-1px, 1px); }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">volver</a>
+    <h1>Mariana Morales</h1>
+    <div class="portfolio-container">
+        <h2>
+            <span class="moving-word">Poesía</span> 
+            <span class="moving-word">Experimental</span>
+        </h2>
+        <div class="category-links">
+            <a href="#">visual</a>
+            <a href="#">palabras curadas</a>
+            <a href="#">objetos</a>
+            <a href="#">escritura expandida</a>
+            <a href="#">performance</a>
+        </div>
+        <table>
+            <tr>
+                <th>proyecto</th>
+                <th>descripción</th>
+                <th>ver más</th>
+            </tr>
+            <tr>
+                <td><img src="thumbnail1.jpg" alt="Proyecto 1"></td>
+                <td>Exploración de la poesía a través del código y la materialidad del texto.</td>
+                <td><a href="#" class="moving-word">Ver proyecto</a></td>
+            </tr>
+            <tr>
+                <td><img src="thumbnail2.jpg" alt="Proyecto 2"></td>
+                <td>Intervenciones poéticas en espacios urbanos y digitales.</td>
+                <td><a href="#" class="moving-word">Ver proyecto</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
