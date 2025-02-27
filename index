@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Morales</title>
+    <style>
+        body {
+            font-family: "Courier New", monospace;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            max-width: 600px;
+            margin: 40px auto;
+            font-size: 1.2em;
+            line-height: 1.6;
+            position: relative;
+            animation: verticalFlow 7s infinite alternate ease-in-out;
+        }
+        p:nth-child(odd) {
+            animation-duration: 6s;
+        }
+        p:nth-child(even) {
+            animation-duration: 8s;
+        }
+        .moving-word {
+            display: inline-block;
+            position: relative;
+            color: #671817;
+            animation: gentleWave 6s infinite alternate ease-in-out;
+        }
+        .moving-word:nth-child(odd) {
+            animation-duration: 7s;
+        }
+        .moving-word:nth-child(even) {
+            animation-duration: 5s;
+        }
+        span {
+            display: inline-block;
+            position: relative;
+            animation: gentleWave 8s infinite alternate ease-in-out;
+        }
+        span:nth-child(odd) {
+            animation-duration: 9s;
+        }
+        span:nth-child(even) {
+            animation-duration: 6s;
+        }
+        @keyframes gentleWave {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(2px, -1px); }
+            50% { transform: translate(-2px, 2px); }
+            75% { transform: translate(1px, -2px); }
+            100% { transform: translate(-1px, 1px); }
+        }
+        @keyframes verticalFlow {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(5px); }
+        }
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid black;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .chat-button img {
+            width: 100%;
+            height: 100%;
+        }
+        .chat-container {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border: 2px solid black;
+            display: none;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-messages {
+            max-height: 200px;
+            overflow-y: auto;
+            text-align: left;
+            font-size: 0.9em;
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+        }
+        .chat-input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid black;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        function toggleChat() {
+            const chat = document.querySelector(".chat-container");
+            chat.style.display = chat.style.display === "none" || chat.style.display === "" ? "flex" : "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Mariana Morales</h1>
+    <p>
+        Soy <span>Mariana Morales</span>, <a href="#" class="moving-word">poeta experimental</a>, <a href="#" class="moving-word">artista visual</a> y <a href="#" class="moving-word">curadora de palabras</a> y <a href="#" class="moving-word">objetos poéticos</a> cotidianos.
+    </p>
+    <p>
+        Mi <span>trabajo</span> explora el <span>movimiento</span> y el <span>espacio</span> como territorios de creación poética, donde la <span>palabra</span>, la <span>imagen</span> y la <span>acción</span> se encuentran.
+    </p>
+    <p>
+        A través de la <a href="#" class="moving-word">escritura expandida</a>, la <a href="#" class="moving-word">performance</a> y la <span>materialidad</span> del <span>texto</span>, investigo los <span>límites</span> entre lo <span>efímero</span> y lo <span>permanente</span>, lo <span>íntimo</span> y lo <span>colectivo</span>.
+    </p>
+    <p>
+        Actualmente, mi exploración se centra en la <a href="#" class="moving-word">CASA</a>, no solo como un <span>espacio físico</span>, sino como una <span>estructura afectiva</span>, un <span>cuerpo</span> que contiene <span>memoria</span>, <span>gestos</span> y <span>ausencias</span>. Me interesa cómo <span>habitamos</span> los <span>espacios</span> y cómo estos nos <span>habitan</span>, cómo el <span>lenguaje</span> se <span>pliega</span>, se <span>rompe</span> y se <span>reconstruye</span> en distintos <span>soportes</span>, desde el <span>papel</span> hasta el <span>cuerpo</span> y el <span>entorno</span>.
+    </p>
+    <p>
+        Cada <span>proyecto</span> es un nuevo <span>intento</span> de <span>nombrar</span> lo <span>inasible</span>, de <span>capturar</span> lo que se <span>escapa</span>.
+    </p>
+    <div class="chat-button" onclick="toggleChat()">
+        <img src="/mnt/data/Icon.jpeg" alt="Chat">
+    </div>
+    <div class="chat-container">
+        <div class="chat-messages"></div>
+        <input type="text" class="chat-input" placeholder="Pregúntame sobre mi obra...">
+    </div>
+</body>
+</html>
