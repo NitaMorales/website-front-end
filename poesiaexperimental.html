@@ -84,7 +84,7 @@
     align-items: center;
     text-align: center;
     font-family: 'Courier New', monospace;
-    border: 1px solid black; /* Mantiene el borde */
+    
     padding: 15px;
     width: 100%;
 }
@@ -106,7 +106,7 @@
             align-items: center;
             text-align: center;
             font-family: 'Courier New', monospace;
-            border: 1px solid black;
+            
             padding: 15px;
         }
         .project img {
@@ -146,6 +146,26 @@
             padding: 3px 8px;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
+        }
+        .project {
+            position: relative;
+            animation: subtleFloat 4s infinite ease-in-out alternate;
+        }
+
+        /* Diferentes velocidades para que cada proyecto tenga su propio ritmo */
+        .project:nth-child(odd) {
+            animation-duration: 5s;
+        }
+
+        .project:nth-child(even) {
+            animation-duration: 6s;
+        }
+
+        /* Definir la animación */
+        @keyframes subtleFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); } /* Hacer el movimiento más visible */
+            100% { transform: translateY(8px); }
         }
     </style>
 </head>
