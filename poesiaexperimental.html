@@ -71,11 +71,29 @@
             100% { transform: translate(-1px, 1px); }
         }
         .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            justify-content: center;
-        }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en escritorio */
+    gap: 40px;
+    justify-content: center;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    border: 1px solid black; /* Mantiene el borde */
+    padding: 15px;
+    width: 100%;
+}
+
+/* RESPONSIVE: En móviles, cambiar a una sola columna */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+}
         .project {
             display: flex;
             flex-direction: column;
