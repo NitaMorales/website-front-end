@@ -73,7 +73,8 @@
         .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Dos columnas en escritorio */
-    gap: 40px;
+    row-gap: 10px; /* Reduce solo la separación vertical entre filas */
+    column-gap: 40px; /* Mantiene la separación horizontal igual */
     justify-content: center;
 }
 
@@ -92,6 +93,11 @@
 @media (max-width: 768px) {
     .project-grid {
         grid-template-columns: 1fr; /* Una sola columna en móviles */
+        padding: 0 10px; /* Un poco de espacio en los lados */
+    }
+    .project {
+        max-width: 80%; /* Reduce el ancho de los proyectos en móviles */
+        margin: auto; /* Centra los proyectos */
     }
 }
         .project {
